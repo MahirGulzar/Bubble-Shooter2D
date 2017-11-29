@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LevelsContainer>
+         <Coordinates id ="1">
+
+           <Level0 attribute_objective="clearAll" numberOfBubbles="100" numberOfRows="16">
+             <value attribute_i="0" attribute_j="1" attribute_color="Red" ></value>
+             <value attribute_i="0" attribute_j="2" attribute_color="Red" ></value>
+             <value attribute_i="0" attribute_j="3" attribute_color="Red" ></value>
+             <value attribute_i="0" attribute_j="4" attribute_color="Green" ></value>
+             <value attribute_i="0" attribute_j="5" attribute_color="Green" ></value>
+             <value attribute_i="0" attribute_j="6" attribute_color="Red" ></value>
+             <value attribute_i="0" attribute_j="7" attribute_color="Red" ></value>
+             <value attribute_i="0" attribute_j="8" attribute_color="Red" ></value>
+
+
+
+             <value attribute_i="1" attribute_j="1" attribute_color="Purple" ></value>
+             <value attribute_i="1" attribute_j="2" attribute_color="Purple" ></value>
+             <value attribute_i="1" attribute_j="3" attribute_color="Yellow" ></value>
+             <value attribute_i="1" attribute_j="4" attribute_color="Yellow" ></value>
+             <value attribute_i="1" attribute_j="5" attribute_color="Yellow" ></value>
+             <value attribute_i="1" attribute_j="6" attribute_color="Purple" ></value>
+             <value attribute_i="1" attribute_j="7" attribute_color="Purple" ></value>
+
+
+
+             <value attribute_i="2" attribute_j="2" attribute_color="Purple" ></value>
+             <value attribute_i="2" attribute_j="3" attribute_color="Yellow" ></value>
+             <value attribute_i="2" attribute_j="4" attribute_color="Green" ></value>
+             <value attribute_i="2" attribute_j="5" attribute_color="Green" ></value>
+             <value attribute_i="2" attribute_j="6" attribute_color="Yellow" ></value>
+             <value attribute_i="2" attribute_j="7" attribute_color="Purple" ></value>
+
+
+
+             <value attribute_i="3" attribute_j="2" attribute_color="Green" ></value>
+             <value attribute_i="3" attribute_j="3" attribute_color="Yellow" ></value>
+             <value attribute_i="3" attribute_j="4" attribute_color="Yellow" ></value>
+             <value attribute_i="3" attribute_j="5" attribute_color="Yellow" ></value>
+             <value attribute_i="3" attribute_j="6" attribute_color="Green" ></value>
+
+
+
+             <value attribute_i="4" attribute_j="3" attribute_color="Yellow" ></value>
+             <value attribute_i="4" attribute_j="4" attribute_color="Green" ></value>
+             <value attribute_i="4" attribute_j="5" attribute_color="Green" ></value>
+             <value attribute_i="4" attribute_j="6" attribute_color="Yellow" ></value>
+
+
+
+             <value attribute_i="5" attribute_j="3" attribute_color="Green" ></value>
+             <value attribute_i="5" attribute_j="4" attribute_color="Green" ></value>
+             <value attribute_i="5" attribute_j="5" attribute_color="Green" ></value>
+
+
+             <value attribute_i="6" attribute_j="4" attribute_color="Green" ></value>
+             <value attribute_i="6" attribute_j="5" attribute_color="Green" ></value>
+
+
+             <value attribute_i="7" attribute_j="4" attribute_color="Green" ></value>
+
+
+
+             <colors attribute="0"></colors>
+             <colors attribute="2"></colors>
+             <colors attribute="3"></colors>
+            <!-- <colors attribute="4"></colors> -->
+
+
+           </Level0>
+
+
+           <Level1 attribute_objective="clearAll" numberOfBubbles="18"  numberOfRows="16">
+
+             <value attribute_i="0" attribute_j="2" attribute_color="Green" ></value>
+             <value attribute_i="0" attribute_j="3" attribute_color="Blue" ></value>
+             <value attribute_i="0" attribute_j="4" attribute_color="Purple" ></value>
+             <value attribute_i="0" attribute_j="5" attribute_color="Purple" ></value>
+             <value attribute_i="0" attribute_j="6" attribute_color="Blue" ></value>
+             <value attribute_i="0" attribute_j="7" attribute_color="Green" ></value>
+
+             <value attribute_i="1" attribute_j="1" attribute_color="Green" ></value>
+             <value attribute_i="1" attribute_j="2" attribute_color="Blue" ></value>
+             <value attribute_i="1" attribute_j="3" attribute_color="Purple" ></value>
+             <value attribute_i="1" attribute_j="4" attribute_color="Yellow" ></value>
+             <value attribute_i="1" attribute_j="5" attribute_color="Purple" ></value>
+             <value attribute_i="1" attribute_j="6" attribute_color="Blue" ></value>
+             <value attribute_i="1" attribute_j="7" attribute_color="Green" ></value>
+
+             <value attribute_i="2" attribute_j="1" attribute_color="Green" ></value>
+             <value attribute_i="2" attribute_j="2" attribute_color="Blue" ></value>
+             <value attribute_i="2" attribute_j="3" attribute_color="Purple" ></value>
+             <value attribute_i="2" attribute_j="4" attribute_color="Yellow" ></value>
+             <value attribute_i="2" attribute_j="5" attribute_color="Yellow" ></value>
+             <value attribute_i="2" attribute_j="6" attribute_color="Purple" ></value>
+             <value attribute_i="2" attribute_j="7" attribute_color="Blue" ></value>
+             <value attribute_i="2" attribute_j="8" attribute_color="Green" ></value>
+
+             <value attribute_i="3" attribute_j="0" attribute_color="Green" ></value>
+             <value attribute_i="3" attribute_j="1" attribute_color="Blue" ></value>
+             <value attribute_i="3" attribute_j="2" attribute_color="Purple" ></value>
+             <value attribute_i="3" attribute_j="3" attribute_color="Yellow" ></value>
+             <value attribute_i="3" attribute_j="4" attribute_color="Yellow" ></value>
+             <value attribute_i="3" attribute_j="5" attribute_color="Yellow" ></value>
+             <value attribute_i="3" attribute_j="6" attribute_color="Purple" ></value>
+             <value attribute_i="3" attribute_j="7" attribute_color="Blue"></value>
+             <value attribute_i="3" attribute_j="8" attribute_color="Green" ></value>
+
+             <value attribute_i="4" attribute_j="1" attribute_color="Green" ></value>
+             <value attribute_i="4" attribute_j="2" attribute_color="Blue" ></value>
+             <value attribute_i="4" attribute_j="3" attribute_color="Purple" ></value>
+             <value attribute_i="4" attribute_j="4" attribute_color="Yellow" ></value>
+             <value attribute_i="4" attribute_j="5" attribute_color="Yellow" ></value>
+             <value attribute_i="4" attribute_j="6" attribute_color="Purple" ></value>
+             <value attribute_i="4" attribute_j="7" attribute_color="Blue" ></value>
+             <value attribute_i="4" attribute_j="8" attribute_color="Green" ></value>
+
+             <value attribute_i="5" attribute_j="1" attribute_color="Green" ></value>
+             <value attribute_i="5" attribute_j="2" attribute_color="Blue" ></value>
+             <value attribute_i="5" attribute_j="3" attribute_color="Purple" ></value>
+             <value attribute_i="5" attribute_j="4" attribute_color="Yellow" ></value>
+             <value attribute_i="5" attribute_j="5" attribute_color="Purple" ></value>
+             <value attribute_i="5" attribute_j="6" attribute_color="Blue" ></value>
+             <value attribute_i="5" attribute_j="7" attribute_color="Green" ></value>
+
+             <value attribute_i="6" attribute_j="2" attribute_color="Green" ></value>
+             <value attribute_i="6" attribute_j="3" attribute_color="Blue" ></value>
+             <value attribute_i="6" attribute_j="4" attribute_color="Purple" ></value>
+             <value attribute_i="6" attribute_j="5" attribute_color="Purple" ></value>
+             <value attribute_i="6" attribute_j="6" attribute_color="Blue" ></value>
+             <value attribute_i="6" attribute_j="7" attribute_color="Green" ></value>
+
+             <colors attribute="0"></colors>
+             <colors attribute="1"></colors>
+             <colors attribute="2"></colors>
+             <colors attribute="4"></colors>
+
+
+
+           </Level1>
+
+
+           <Level2 attribute_objective="clearAll" numberOfBubbles="15"  numberOfRows="20">
+
+             <value attribute_i="0" attribute_j="4" attribute_color="Green"></value>
+             <value attribute_i="0" attribute_j="5" attribute_color="Green" ></value>
+
+
+
+             <value attribute_i="1" attribute_j="3" attribute_color="Purple" ></value>
+             <value attribute_i="1" attribute_j="4" attribute_color="Green" ></value>
+             <value attribute_i="1" attribute_j="5" attribute_color="Yellow" ></value>
+
+
+
+             <value attribute_i="2" attribute_j="3" attribute_color="Green" ></value>
+             <value attribute_i="2" attribute_j="4" attribute_color="Purple" ></value>
+             <value attribute_i="2" attribute_j="5" attribute_color="Yellow" ></value>
+             <value attribute_i="2" attribute_j="6" attribute_color="Blue" ></value>
+
+
+             <value attribute_i="3" attribute_j="2" attribute_color="Blue" ></value>
+             <value attribute_i="3" attribute_j="3" attribute_color="Green" ></value>
+
+             <value attribute_i="3" attribute_j="5" attribute_color="Blue" ></value>
+             <value attribute_i="3" attribute_j="6" attribute_color="Purple" ></value>
+
+
+
+
+             <value attribute_i="4" attribute_j="2" attribute_color="Yellow" ></value>
+             <value attribute_i="4" attribute_j="3" attribute_color="Blue" ></value>
+
+             <value attribute_i="4" attribute_j="6" attribute_color="Purple" ></value>
+             <value attribute_i="4" attribute_j="7" attribute_color="Yellow" ></value>
+
+
+
+             <value attribute_i="5" attribute_j="1" attribute_color="Green" ></value>
+             <value attribute_i="5" attribute_j="2" attribute_color="Yellow" ></value>
+
+             <value attribute_i="5" attribute_j="6" attribute_color="Yellow" ></value>
+             <value attribute_i="5" attribute_j="7" attribute_color="Green" ></value>
+
+
+             <value attribute_i="6" attribute_j="1" attribute_color="Green" ></value>
+             <value attribute_i="6" attribute_j="2" attribute_color="Green" ></value>
+             <value attribute_i="6" attribute_j="7" attribute_color="Green" ></value>
+             <value attribute_i="6" attribute_j="8" attribute_color="Green"></value>
+
+
+
+
+
+             <colors attribute="0"></colors>
+             <colors attribute="1"></colors>
+             <colors attribute="2"></colors>
+             <colors attribute="4"></colors>
+
+
+
+
+           </Level2>
+   
+
+         </Coordinates>
+   
+
+ </LevelsContainer>
