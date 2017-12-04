@@ -2,12 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public enum SpecialType
-{
-    Blade,
-    Fire,
-    Ice,
-}
 
 
 public class Obstacle : MonoBehaviour {
@@ -23,18 +17,10 @@ public class Obstacle : MonoBehaviour {
     private Dictionary<float, Transform> nearestDistance;
 
 
-
-
-    //Object Pooling
-   // public GameObject ObjectPool_bubble_pop;
-   // public GameObject ObjectPool_ScoreFly;
-   // private ObjectPoolScript pop_pooler;
     public Transform Android_Pos, IOS_Pos;
     public GameObject BubblePop_Animation;
-    public bool isSpecial;
-    public bool isIce;
-    public bool isBlade;
-    public SpecialType special_type;
+ 
+    //public SpecialType special_type;
     public GameObject VoiceOver;
 
 
@@ -53,9 +39,7 @@ public class Obstacle : MonoBehaviour {
 
     void Start()
     {
-       // ObjectPool = GameObject.FindObjectOfType<ObjectPoolScript>();
-        //ObjectPool_ScoreFly = GameObject.Find("ObjectPooling_ScoreFlyer");
-        //pop_pooler = ObjectPool_bubble_pop.GetComponent<ObjectPoolScript>();
+
         StartCoroutine(ColorPopulation());
 
     }
@@ -103,7 +87,6 @@ public class Obstacle : MonoBehaviour {
         GameObject.FindObjectOfType<UpComingColors>().OnFlip += UpdateColorsOnFlip;
         gameManager.OnGridPlacement += this.OnGridPlacement;
         gameManager.OnTouchDown += this.OnTouchDown;
-        gameManager.OnSpecialBubbleSelected += this.OnSpecialBubbleSelected;
     }
 
     void OnDisable()
@@ -118,7 +101,6 @@ public class Obstacle : MonoBehaviour {
         }
         gameManager.OnGridPlacement -= this.OnGridPlacement;
         gameManager.OnTouchDown -= this.OnTouchDown;
-        gameManager.OnSpecialBubbleSelected -= this.OnSpecialBubbleSelected;
     }
 
     void OnGridPlacement()
@@ -129,34 +111,7 @@ public class Obstacle : MonoBehaviour {
     {
         //this.inStack = false;
     }
-    void OnSpecialBubbleSelected()
-    {
-        // Perform Special Bubble Functionality
-         GameObject particles=null;
-          switch(special_type)
-            {
-              case SpecialType.Blade:
-                   // sp.sprite = gameManager.sp_special[0];
-                    particles = Instantiate(Resources.Load("BladeParticle")) as GameObject;
-                    isBlade = true;
-                    break;
-              case SpecialType.Fire:
-                   // sp.sprite = gameManager.sp_special[1];
-                    particles = Instantiate(Resources.Load("FireParticle")) as GameObject;
-                    isSpecial = true;
-                    break;
-              case SpecialType.Ice:
-                   // sp.sprite = gameManager.sp_special[2];
-                    particles = Instantiate(Resources.Load("IceParticle")) as GameObject;
-                    isIce = true;
-                    break;
-
-            }
-          particles.transform.parent = this.transform;
-          particles.transform.localPosition = new Vector3(0, 0, 0);
-          
-        
-    }
+   
     #endregion
 
     IEnumerator WaitForChange()
@@ -231,52 +186,9 @@ public class Obstacle : MonoBehaviour {
                         ForSort.Sort();
                         this.transform.position = nearestDistance[ForSort[0]].position;
                         this.GetComponent<CircleCollider2D>().enabled = false;
-                        if (isSpecial)
-                        {
-                            // BlastGrid_In_Radius(ForSort[0]);
-                            Collider2D[] Colliders = Physics2D.OverlapCircleAll(nearestDistance[ForSort[0]].position, 1.5f, 1 << LayerMask.NameToLayer("Default"));
-                            BlastGrid_In_Cirle_Radius(Colliders, ForSort[0]);
-                        }
-                        else if (isIce)
-                        {
-                            int rowNumber = 0;
-                            int columnLength;
-                            if ((rowNumber % 2) == 0)
-                                columnLength = 10;
-                            else
-                                columnLength = 9;
-
-                            Ice_Functionality(rowNumber, columnLength);
-
-                        }
-                        else if (isBlade)
-                        {
-                            GameObject temp2;
-                            switch (special_type)
-                            {
-                                case SpecialType.Blade:
-                                    SoundManager.Instance.ClickBladeSound();
-                                    temp2 = Instantiate(Resources.Load("BladeAnimation")) as GameObject;
-                                    break;
-
-                                case SpecialType.Fire:
-                                    SoundManager.Instance.ClickFireSound();
-                                    temp2 = Instantiate(Resources.Load("FireAnimation")) as GameObject;
-                                    break;
-
-                                default:
-                                    SoundManager.Instance.ClickIceSound();
-                                    temp2 = Instantiate(Resources.Load("IceAnimation")) as GameObject;
-                                    break;
-                            }
-                            temp2.transform.parent = this.gameObject.transform.parent;
-                            temp2.transform.position = this.transform.position;
-                            this.isBlade = false;
-                        }
-                        else
-                        {
+                       
                             FuseInGrid(ForSort[0]);
-                        }
+                        
                         
 
 
@@ -364,32 +276,9 @@ public class Obstacle : MonoBehaviour {
                         {
                             this.transform.position = nearestDistance[ForSort[0]].position;
                             this.GetComponent<CircleCollider2D>().enabled = false;
-                            if (isSpecial)
-                            {
-                                // BlastGrid_In_Radius(ForSort[0]);
-                                Collider2D[] Colliders = Physics2D.OverlapCircleAll(nearestDistance[ForSort[0]].position, 1.5f, 1 << LayerMask.NameToLayer("Default"));
-                                BlastGrid_In_Cirle_Radius(Colliders, ForSort[0]);
-                            }
-                            else if(isIce)
-                            {
-                                int rowNumber = other.gameObject.GetComponent<BubbleProperties>().i;
-                                int columnLength;
-                                if ((rowNumber % 2) == 0)
-                                    columnLength = 10;
-                                else
-                                    columnLength = 9;
-
-                                Ice_Functionality(rowNumber, columnLength);
-
-                            }
-                            else if(isBlade)
-                            {
-                                Blade_Functionality(other.gameObject.GetComponent<BubbleProperties>().BubbleColor);
-                            }
-                            else
-                            {
+                            
                                 FuseInGrid(ForSort[0]);
-                            }
+                            
                         }
 
                     }
@@ -567,26 +456,25 @@ public class Obstacle : MonoBehaviour {
         }
 
             GameObject temp2;
-            switch (special_type)
-            {
-                case SpecialType.Blade:
-                    SoundManager.Instance.ClickBladeSound();
-                    temp2 = Instantiate(Resources.Load("BladeAnimation")) as GameObject;
-                    break;
+            //switch (special_type)
+            //{
+            //    case SpecialType.Blade:
+            //        SoundManager.Instance.ClickBladeSound();
+            //        temp2 = Instantiate(Resources.Load("BladeAnimation")) as GameObject;
+            //        break;
 
-                case SpecialType.Fire:
-                    SoundManager.Instance.ClickFireSound();
-                    temp2 = Instantiate(Resources.Load("FireAnimation")) as GameObject;
-                    break;
+            //    case SpecialType.Fire:
+            //        SoundManager.Instance.ClickFireSound();
+            //        temp2 = Instantiate(Resources.Load("FireAnimation")) as GameObject;
+            //        break;
 
-                default:
-                    SoundManager.Instance.ClickIceSound();
-                    temp2 = Instantiate(Resources.Load("IceAnimation")) as GameObject;
-                    break;
-            }
-            temp2.transform.parent = this.gameObject.transform.parent;
-            temp2.transform.position = this.transform.position;
-            this.isIce = false;
+            //    default:
+            //        SoundManager.Instance.ClickIceSound();
+            //        temp2 = Instantiate(Resources.Load("IceAnimation")) as GameObject;
+            //        break;
+            //}
+            //temp2.transform.parent = this.gameObject.transform.parent;
+            //temp2.transform.position = this.transform.position;
             inRows.Clear();
             gameManager.OnMatch_three();
             gameManager.colorMatcher.Clear();
@@ -678,26 +566,26 @@ public class Obstacle : MonoBehaviour {
         }
 
         GameObject temp2;
-        switch (special_type)
-        {
-            case SpecialType.Blade:
-                SoundManager.Instance.ClickBladeSound();
-                temp2 = Instantiate(Resources.Load("BladeAnimation")) as GameObject;
-                break;
+        //switch (special_type)
+        //{
+        //    case SpecialType.Blade:
+        //        SoundManager.Instance.ClickBladeSound();
+        //        temp2 = Instantiate(Resources.Load("BladeAnimation")) as GameObject;
+        //        break;
 
-            case SpecialType.Fire:
-                SoundManager.Instance.ClickFireSound();
-                temp2 = Instantiate(Resources.Load("FireAnimation")) as GameObject;
-                break;
+        //    case SpecialType.Fire:
+        //        SoundManager.Instance.ClickFireSound();
+        //        temp2 = Instantiate(Resources.Load("FireAnimation")) as GameObject;
+        //        break;
 
-            default:
-                SoundManager.Instance.ClickIceSound();
-                temp2 = Instantiate(Resources.Load("IceAnimation")) as GameObject;
-                break;
-        }
-        temp2.transform.parent = this.gameObject.transform.parent;
-        temp2.transform.position = this.transform.position;
-        this.isBlade = false;
+        //    default:
+        //        SoundManager.Instance.ClickIceSound();
+        //        temp2 = Instantiate(Resources.Load("IceAnimation")) as GameObject;
+        //        break;
+        //}
+        //temp2.transform.parent = this.gameObject.transform.parent;
+        //temp2.transform.position = this.transform.position;
+        //this.isBlade = false;
         gameManager.OnMatch_three();
         gameManager.colorMatcher.Clear();
     }
@@ -757,27 +645,27 @@ public class Obstacle : MonoBehaviour {
         //}
         nearestDistance[dist].GetComponent<BubbleProperties>().isEmpty = true;
         GameObject temp2;
-        switch(special_type)
-        {
-            case SpecialType.Blade:
-                SoundManager.Instance.ClickBladeSound();
-                temp2 = Instantiate(Resources.Load("BladeAnimation")) as GameObject;
-                break;
+        //switch(special_type)
+        //{
+        //    case SpecialType.Blade:
+        //        SoundManager.Instance.ClickBladeSound();
+        //        temp2 = Instantiate(Resources.Load("BladeAnimation")) as GameObject;
+        //        break;
             
-            case SpecialType.Fire:
-                SoundManager.Instance.ClickFireSound();
-                temp2 = Instantiate(Resources.Load("FireAnimation")) as GameObject;
-                break;
+        //    case SpecialType.Fire:
+        //        SoundManager.Instance.ClickFireSound();
+        //        temp2 = Instantiate(Resources.Load("FireAnimation")) as GameObject;
+        //        break;
 
-            default:
-                SoundManager.Instance.ClickIceSound();
-                temp2 = Instantiate(Resources.Load("IceAnimation")) as GameObject;
-                break;
-        }
+        //    default:
+        //        SoundManager.Instance.ClickIceSound();
+        //        temp2 = Instantiate(Resources.Load("IceAnimation")) as GameObject;
+        //        break;
+        //}
         
-        temp2.transform.parent = this.gameObject.transform.parent;
-        temp2.transform.position = this.transform.position;
-        this.isSpecial = false;
+        //temp2.transform.parent = this.gameObject.transform.parent;
+        //temp2.transform.position = this.transform.position;
+        ////this.isSpecial = false;
 
         gameManager.OnMatch_three();
         gameManager.colorMatcher.Clear();

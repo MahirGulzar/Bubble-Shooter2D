@@ -18,17 +18,7 @@ public class Android_Border_Positions : MonoBehaviour {
 #endif
 
 
-#if UNITY_IOS
-        if(IOS_Pos!=null)
-        {
-        if (!upcome)
-            this.transform.position = new Vector2(IOS_Pos.transform.position.x, IOS_Pos.transform.position.y);
 
-
-
-        this.transform.localScale = IOS_Pos.transform.localScale;
-        }
-#endif
     }
 
 

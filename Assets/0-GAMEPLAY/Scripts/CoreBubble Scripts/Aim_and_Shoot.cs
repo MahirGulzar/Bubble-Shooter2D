@@ -53,8 +53,6 @@ public class Aim_and_Shoot : MonoBehaviour {
  
 
 
-    //Ad Available
-    public bool VideoAvailable;
     
 
     void Awake()
@@ -100,36 +98,29 @@ public class Aim_and_Shoot : MonoBehaviour {
     {
         gameManager.OnGridPlacement += this.OnGridPlacement;
         gameManager.OnLevel_Cleared += this.OnLevel_Cleared;
-        gameManager.OnSpecialBubbleSelected += this.OnSpecialBubbleSelected;
     }
 
     void OnDisable()
     {
         gameManager.OnGridPlacement -= this.OnGridPlacement;
         gameManager.OnLevel_Cleared -= this.OnLevel_Cleared;
-        gameManager.OnSpecialBubbleSelected -= this.OnSpecialBubbleSelected;
     }
     
     public void StartAiming()           // Release Aim locking 
     {
         
         isAiming = true;
-        //print("helloo");
     }
     
     public void OutOfBounds()           // If user touch drag during aiming goes in screen corners
     {
         //print("Out OF Bounds......");
         isAiming = false;
-        //this.GetComponent<AudioSource>().Stop();
     }
 
     public void DragCannon()
     {
-        //if(!this.GetComponent<AudioSource>().isPlaying)
-        //{
-        //    this.GetComponent<AudioSource>().Play();
-        //}
+      
     }
     public void DragEndCannon()
     {
@@ -159,11 +150,6 @@ public class Aim_and_Shoot : MonoBehaviour {
     }
 
 
-    public void RewardedVideoLoaded()
-    {
-        VideoAvailable = true;
-        Debug.Log("Rewared Video Loaded");
-    }
     void OnGridPlacement()
     {
         
@@ -202,16 +188,10 @@ public class Aim_and_Shoot : MonoBehaviour {
     void OnLevel_Cleared()
     {
         isLevel_Cleared = true;
-        //print("should stop");
-        //Time.timeScale = 0.2f;
         StartCoroutine("WaitTillFallingBubbles");
     }
 
 
-    void OnSpecialBubbleSelected()
-    {
-        Special_Button.GetComponent<Button>().interactable = false;
-    }
     void ShootTillCannonEmpty()
     {
         if (GamePrefs.NO_OF_BUBBLES > 0)
@@ -316,11 +296,7 @@ public class Aim_and_Shoot : MonoBehaviour {
     {
         yield return new WaitUntil(() => GamePrefs.temp_remaning_projectiles_shot==Projectiles_Instantiated-1 );
         yield return new WaitForSeconds(0.5f);
-        SoundManager.Instance.ClickLevelCompleteSound();
-#if UNITY_IOS
-
-        AGameUtils.LogAnalyticEvent ("Level" + (GamePrefs.CURRENT_LEVEL + 1) + " : " + "Level_Completed");
-#endif
+        //SoundManager.Instance.ClickLevelCompleteSound();
         Upcoming2.GetComponent<SpriteRenderer>().enabled = false;
         gameManager.OnShootCannonEmpty();
     }

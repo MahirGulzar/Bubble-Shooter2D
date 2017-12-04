@@ -21,13 +21,11 @@ public class UpComingColors : MonoBehaviour {
     void OnEnable()
     {
         gameManager.OnLevel_Cleared += this.OnLevel_Cleared;
-        gameManager.OnSpecialBubbleSelected += this.OnSpecialBubbleSelected;
         gameManager.OnGridPlacement += this.OnGridPlacement;
     }
     void OnDisable()
     {
         gameManager.OnLevel_Cleared -= this.OnLevel_Cleared;
-        gameManager.OnSpecialBubbleSelected -= this.OnSpecialBubbleSelected;
         gameManager.OnGridPlacement -= this.OnGridPlacement;
     }
 
@@ -55,11 +53,6 @@ public class UpComingColors : MonoBehaviour {
     void OnLevel_Cleared()
     {
         levelCleared = true;
-    }
-
-    void OnSpecialBubbleSelected()
-    {
-        release_switch_btn = false;
     }
 
     void OnGridPlacement()

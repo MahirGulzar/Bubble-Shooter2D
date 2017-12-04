@@ -125,13 +125,7 @@ public class BubbleProperties : MonoBehaviour {
             Color tempColor = new Color(1, 1, 1, 1f);
             this.GetComponent<SpriteRenderer>().color = tempColor;
             this.GetComponent<CircleCollider2D>().isTrigger = false;
-            //if(isBird)
-            //{
-            //    Native_Bird_Object=GameObject.Find("ObjectPooling_"+BubbleColor+"_Bird").GetComponent<ObjectPoolScript>().GetPooledObject();
-            //    Native_Bird_Object.transform.parent = this.transform.parent;
-            //    Native_Bird_Object.transform.position = this.transform.position;
-            //    Native_Bird_Object.transform.localScale = this.transform.localScale;
-            //}
+            
         }
 
         

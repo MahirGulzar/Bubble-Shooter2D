@@ -40,7 +40,6 @@ public class GameManager:MonoBehaviour{
     public Action OnTouchDown;
     public Action OnMatch_three;
     public Action OnLevel_Cleared;
-    public Action OnSpecialBubbleSelected;
     public Action OnLevelFailed;
     public Action OnShootCannonEmpty;
     public Action OnVoiceOvers;
@@ -59,7 +58,7 @@ public class GameManager:MonoBehaviour{
     // Falling Bubbles Object Pooling
 
     public ObjectPoolScript ObjectPool;
-    //public ObjectPoolScript Green_Bird_Pool, Blue_Bird_Pool, Yellow_Bird_Pool, Red_Bird_Pool, Purple_Bird_Pool, Black_Bird_Pool;
+  
 
 
     public bool level_cleared;

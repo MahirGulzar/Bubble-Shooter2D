@@ -31,7 +31,6 @@ public class Catcher : MonoBehaviour {
             GamePrefs.lEVEL_SCORE += ScoreToGive;
             GameObject temp = DrumPooler.GetPooledObject();
             temp.transform.position = this.transform.position;
-            temp.GetComponent<DrumScoreFly>().ScoreToFly = ScoreToGive;
             temp.SetActive(true);
             
 
