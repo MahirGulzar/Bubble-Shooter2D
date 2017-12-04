@@ -10,7 +10,7 @@ public class ForPause : MonoBehaviour {
     public void OnClicked()
     {
         int checkothers = 0;
-        SoundManager.Instance.DragSwipe();
+
         for(int i=0;i<Overlays.Length;i++)
         {
             if(Overlays[i].active)

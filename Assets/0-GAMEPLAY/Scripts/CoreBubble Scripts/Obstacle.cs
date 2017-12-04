@@ -17,10 +17,10 @@ public class Obstacle : MonoBehaviour {
     private Dictionary<float, Transform> nearestDistance;
 
 
-    public Transform Android_Pos, IOS_Pos;
+    public Transform Android_Pos;
     public GameObject BubblePop_Animation;
  
-    //public SpecialType special_type;
+
     public GameObject VoiceOver;
 
 
@@ -304,7 +304,7 @@ public class Obstacle : MonoBehaviour {
 
 
         prev_Score = GamePrefs.lEVEL_SCORE;
-        //gameManager.OnVoiceOvers();
+
 
         if(gameManager.colorMatcher.Count>=2)
         {
@@ -313,13 +313,7 @@ public class Obstacle : MonoBehaviour {
             foreach (Transform temp in gameManager.colorMatcher)
             {
                 
-                
-                    //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
-                    //flyer.GetComponent<ScoreFly>().ScoreToFly = 5;
-                    //flyer.transform.position = temp.gameObject.transform.position;
-                    //flyer.SetActive(true);
-                    //gameManager.Level_Score += 5;
-                    GamePrefs.lEVEL_SCORE += 5;
+                  GamePrefs.lEVEL_SCORE += 5;
                 
                // GameObject pop_anim = pop_pooler.GetPooledObject();
                 //pop_anim.transform.position = temp.transform.position;
@@ -338,38 +332,10 @@ public class Obstacle : MonoBehaviour {
             //pop_anim_again.SetActive(true);
             nearestDistance[dist].GetComponent<BubbleProperties>().isEmpty = true;
 
-            
-            //VoiceOver.GetComponent<SpriteRenderer>().sprite = gameManager.sp_VoiceOvers[Rand];
-            
-            if (gameManager.colorMatcher.Count>=15)
-            {
-                SoundManager.Instance.ClickCombo4Sound();
-            
-               // Debug.Log("Combo4");
-            }
-            else if (gameManager.colorMatcher.Count >= 10)
-            {
-                SoundManager.Instance.ClickCombo3Sound();
- 
-              //  Debug.Log("Combo3");
-            }
-            else if (gameManager.colorMatcher.Count >= 5)
-            {
-                SoundManager.Instance.ClickCombo2Sound();
-
-               // Debug.Log("Combo2");
-            }
-            else
-            {
-                SoundManager.Instance.ClickCombo1Sound();
-            }
-
 
             gameManager.OnMatch_three();
         }
 
-        //gameManager.IncreamentScore(GamePrefs.lEVEL_SCORE - prev_Score);
-        //StartCoroutine(IncreamentalScore(GamePrefs.lEVEL_SCORE - prev_Score));
 
         gameManager.colorMatcher.Clear();
 
@@ -377,225 +343,7 @@ public class Obstacle : MonoBehaviour {
 
 
 
-    void Ice_Functionality(int rowNumber, int columnLength)
-    {
-        
-        List<Transform> inRows = new List<Transform>();
-
-        for (int j = 0; j < columnLength; j++)
-        {
-            inRows.Add(gameManager.MatrixGrid[rowNumber][j]);
-        }
-
-        if(rowNumber>0)
-        {
-            rowNumber--;
-            if(columnLength==10)
-            {
-                columnLength = 9;
-                
-            }
-            else
-            {
-                columnLength = 10;
-            }
-            for (int j = 0; j < columnLength; j++)
-            {
-                inRows.Add(gameManager.MatrixGrid[rowNumber][j]);
-            }
-            
-        }
-        Instantiate(Resources.Load("StripesEffect") as GameObject, new Vector2(0, this.transform.position.y+0.5f), Quaternion.identity);
-
-        foreach(Transform temp in inRows)
-        {
-            if (!temp.GetComponent<BubbleProperties>().isEmpty)
-            {
-                
-                    //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
-                    //flyer.GetComponent<ScoreFly>().ScoreToFly = 5;
-                    //flyer.transform.position = temp.gameObject.transform.position;
-                    //flyer.SetActive(true);
-                    //gameManager.Level_Score += 5;
-                
-               // GameObject pop_anim = pop_pooler.GetPooledObject();
-                //pop_anim.transform.position =temp.transform.position;
-                //pop_anim.transform.rotation = Quaternion.identity;
-                //pop_anim.transform.localScale = temp.transform.localScale;
-                //pop_anim.SetActive(true);
-
-                temp.GetComponent<BubbleProperties>().isEmpty = true;
-            }
-        }
-
-            GameObject temp2;
-            //switch (special_type)
-            //{
-            //    case SpecialType.Blade:
-            //        SoundManager.Instance.ClickBladeSound();
-            //        temp2 = Instantiate(Resources.Load("BladeAnimation")) as GameObject;
-            //        break;
-
-            //    case SpecialType.Fire:
-            //        SoundManager.Instance.ClickFireSound();
-            //        temp2 = Instantiate(Resources.Load("FireAnimation")) as GameObject;
-            //        break;
-
-            //    default:
-            //        SoundManager.Instance.ClickIceSound();
-            //        temp2 = Instantiate(Resources.Load("IceAnimation")) as GameObject;
-            //        break;
-            //}
-            //temp2.transform.parent = this.gameObject.transform.parent;
-            //temp2.transform.position = this.transform.position;
-            inRows.Clear();
-            gameManager.OnMatch_three();
-            gameManager.colorMatcher.Clear();
-        
-        
-    }
-
-    void Blade_Functionality(ColorProperty cp)
-    {
-        for (int i = 0; i < gameManager.Num_Of_Rows; i++)
-        {
-            if (i % 2 == 0)
-            {
-                for (int j = 0; j < gameManager.Num_Of_Columns; j++)
-                {
-                    
-                    if(gameManager.MatrixGrid[i][j].GetComponent<BubbleProperties>().BubbleColor==cp && !gameManager.MatrixGrid[i][j].GetComponent<BubbleProperties>().isEmpty)
-                    {
-                        Transform temp = gameManager.MatrixGrid[i][j];
-                       
-                            //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
-                            //flyer.GetComponent<ScoreFly>().ScoreToFly = 5;
-                            //flyer.transform.position = temp.gameObject.transform.position;
-                            //flyer.SetActive(true);
-                           // gameManager.Level_Score += 5;
-                        
-                        //GameObject pop_anim = pop_pooler.GetPooledObject();
-                        //pop_anim.transform.position = temp.transform.position;
-                        //pop_anim.transform.rotation = Quaternion.identity;
-                        //pop_anim.transform.localScale = temp.transform.localScale;
-                        //pop_anim.SetActive(true);
-
-                        temp.GetComponent<BubbleProperties>().isEmpty = true;
-                    }
-
-                }
-            }
-            else
-            {
-                for (int j = 0; j < gameManager.Num_Of_Columns - 1; j++)
-                {
-                    if (gameManager.MatrixGrid[i][j].GetComponent<BubbleProperties>().BubbleColor == cp && !gameManager.MatrixGrid[i][j].GetComponent<BubbleProperties>().isEmpty)
-                    {
-                        Transform temp = gameManager.MatrixGrid[i][j];
-                        
-                            //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
-                            //flyer.GetComponent<ScoreFly>().ScoreToFly = 5;
-                            //flyer.transform.position = temp.gameObject.transform.position;
-                            //flyer.SetActive(true);
-                            //gameManager.Level_Score += 5;
-                        
-                        //GameObject pop_anim = pop_pooler.GetPooledObject();
-                        //pop_anim.transform.position = temp.transform.position;
-                        //pop_anim.transform.rotation = Quaternion.identity;
-                        //pop_anim.transform.localScale = temp.transform.localScale;
-                        //pop_anim.SetActive(true);
-
-                        temp.GetComponent<BubbleProperties>().isEmpty = true;
-                    }
-                }
-            }
-
-        }
-
-        GameObject temp2;
-        //switch (special_type)
-        //{
-        //    case SpecialType.Blade:
-        //        SoundManager.Instance.ClickBladeSound();
-        //        temp2 = Instantiate(Resources.Load("BladeAnimation")) as GameObject;
-        //        break;
-
-        //    case SpecialType.Fire:
-        //        SoundManager.Instance.ClickFireSound();
-        //        temp2 = Instantiate(Resources.Load("FireAnimation")) as GameObject;
-        //        break;
-
-        //    default:
-        //        SoundManager.Instance.ClickIceSound();
-        //        temp2 = Instantiate(Resources.Load("IceAnimation")) as GameObject;
-        //        break;
-        //}
-        //temp2.transform.parent = this.gameObject.transform.parent;
-        //temp2.transform.position = this.transform.position;
-        //this.isBlade = false;
-        gameManager.OnMatch_three();
-        gameManager.colorMatcher.Clear();
-    }
-
-
-    void BlastGrid_In_Cirle_Radius(Collider2D[] colliders, float dist)
-   {
-
-
-        for(int i=0;i<colliders.Length;i++)
-        {
-            if (colliders[i].tag == "BubbleTag")
-            {
-                if (!colliders[i].GetComponent<BubbleProperties>().isEmpty)
-                {
-                   
-                        //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
-                        //flyer.GetComponent<ScoreFly>().ScoreToFly = 5;
-                        //flyer.transform.position = colliders[i].gameObject.transform.position;
-                        //flyer.SetActive(true);
-                       // gameManager.Level_Score += 5;
-                    
-                    //GameObject pop_anim = pop_pooler.GetPooledObject();
-                    //pop_anim.transform.position = colliders[i].transform.position;
-                    //pop_anim.transform.rotation = Quaternion.identity;
-                    //pop_anim.transform.localScale = colliders[i].transform.localScale;
-                    //pop_anim.SetActive(true);
-
-                    colliders[i].GetComponent<BubbleProperties>().isEmpty = true;
-                }
-            }
-        }
-       
-       
-        nearestDistance[dist].GetComponent<BubbleProperties>().isEmpty = true;
-        GameObject temp2;
-        //switch(special_type)
-        //{
-        //    case SpecialType.Blade:
-        //        SoundManager.Instance.ClickBladeSound();
-        //        temp2 = Instantiate(Resources.Load("BladeAnimation")) as GameObject;
-        //        break;
-            
-        //    case SpecialType.Fire:
-        //        SoundManager.Instance.ClickFireSound();
-        //        temp2 = Instantiate(Resources.Load("FireAnimation")) as GameObject;
-        //        break;
-
-        //    default:
-        //        SoundManager.Instance.ClickIceSound();
-        //        temp2 = Instantiate(Resources.Load("IceAnimation")) as GameObject;
-        //        break;
-        //}
-        
-        //temp2.transform.parent = this.gameObject.transform.parent;
-        //temp2.transform.position = this.transform.position;
-        ////this.isSpecial = false;
-
-        gameManager.OnMatch_three();
-        gameManager.colorMatcher.Clear();
-        gameManager.InRadiusOfExploision.Clear();
-        //print()
-   }
+   
 
 
     #endregion

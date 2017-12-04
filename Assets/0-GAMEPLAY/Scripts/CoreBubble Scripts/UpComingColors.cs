@@ -33,7 +33,6 @@ public class UpComingColors : MonoBehaviour {
     {
         if (release_switch_btn && !levelCleared && !BubbleCountOneLock)
         {
-            SoundManager.Instance.DragSwipe();
             iTween.RotateAdd(FlipArrows, new Vector3(0, 0, -180), 0.5f);
             release_switch_btn = false;
 //			Time.timeScale = 0.2f;

@@ -5,7 +5,7 @@ public class Android_Border_Positions : MonoBehaviour {
 
     //Currently responsible for grid and border colliders orientation for android
     public bool upcome;
-    public Transform Android_Pos,IOS_Pos;
+    public Transform Android_Pos;
     void Awake()
     {
 #if UNITY_ANDROID

@@ -439,25 +439,7 @@ public class GameManager:MonoBehaviour{
         }
 
 
-        int rand = 0;
-        if (falling_Count >= 12)
-        {
-            rand = 2;
-        }
-        else if (falling_Count >= 8)
-        {
-            rand = 1;
-        }
-        else if (falling_Count >= 5)
-        {
-            rand = 0;
-        }
-
-        if (falling_Count >= 5)
-        {
-            // VoiceOver.GetComponent<SpriteRenderer>().sprite = sp_VoiceOvers[rand];
-            // VoiceOver.GetComponent<TweenScale>().PlayForward();
-        }
+        
 
 
 

@@ -8,7 +8,6 @@ public class TabberUI : MonoBehaviour {
 	
     public void OnClicked()
     {
-        SoundManager.Instance.ClickPlayButton();
         ToActive.SetActive(true);
         ToDeactive.SetActive(false);
     }

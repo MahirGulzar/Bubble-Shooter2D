@@ -44,7 +44,7 @@ public class Aim_and_Shoot : MonoBehaviour {
 
     //
 
-    public GameObject Special_Button;
+
 
 
     // shoot and empty canon
@@ -134,7 +134,7 @@ public class Aim_and_Shoot : MonoBehaviour {
         //this.GetComponent<AudioSource>().Stop();
         if (isAiming & !lockInstance && GamePrefs.NO_OF_BUBBLES>0 && !isLevel_Cleared)
         {
-            SoundManager.Instance.ClickCannonShot();
+
             GamePrefs.NO_OF_BUBBLES--;
             //print(GamePrefs.NO_OF_BUBBLES);
             gameManager.OnTouchDown();
@@ -143,7 +143,6 @@ public class Aim_and_Shoot : MonoBehaviour {
             projectile.AddForce(velocity * 40);
             isAiming = false;
             lockInstance = true;
-            //Special_Button.GetComponent<Button>().interactable = true;
             
         }
         
@@ -219,7 +218,6 @@ public class Aim_and_Shoot : MonoBehaviour {
             Projectiles_Instantiated++;
             Spawnpoint.name = "Wasted" + Projectiles_Instantiated;
             //print("projectile instantiated "+Spawnpoint.name);
-            SoundManager.Instance.ClickCannonShot();
             projectile.AddForce(velocity * 40);
             Invoke("DelayForSelfCollision", 0.03f);
             //Spawnpoint.GetComponent<CircleCollider2D>().isTrigger = false;

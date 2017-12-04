@@ -124,18 +124,7 @@ public class CalculateStars : MonoBehaviour {
     {
         
         yield return new WaitForSeconds(time);
-        if (star == stars[0])
-        {
-            SoundManager.Instance.ClickOneStarSound();
-        }
-        else if (star == stars[1])
-        {
-            SoundManager.Instance.ClickTwoStarSound();
-        }
-        else if (star == stars[2])
-        {
-            SoundManager.Instance.ClickThreeStarSound();
-        }
+
         star.SetActive(true);
     }
 

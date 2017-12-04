@@ -16,11 +16,11 @@ public class EnableAnObject : MonoBehaviour {
 
         if (Sound)
         {
-            SoundManager.Instance.ClickPlayButton();
+
         }
         if(SwipeSound)
         {
-            SoundManager.Instance.DragSwipe();
+
         }
         if(Target.active && Act_As_Toggle)
         {
