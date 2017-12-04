@@ -427,8 +427,8 @@ public class Obstacle : MonoBehaviour {
                 if (temp.GetComponent<BubbleProperties>().isBird)
                 {
                     SoundManager.Instance.ClickBirdSound();
-                    temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                    temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
+                    //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
+                    //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
                     //gameManager.birds_rescued++;
                     GamePrefs.lEVEL_SCORE += 10;
                     temp.GetComponent<BubbleProperties>().isBird = false;
@@ -539,8 +539,8 @@ public class Obstacle : MonoBehaviour {
                 if (temp.GetComponent<BubbleProperties>().isBird)
                 {
                     SoundManager.Instance.ClickBirdSound();
-                    temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                    temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
+                    //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
+                    //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
                     //gameManager.birds_rescued++;
                    // gameManager.Level_Score += 10;          // scoring bird
                     //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
@@ -609,8 +609,8 @@ public class Obstacle : MonoBehaviour {
                         if (temp.GetComponent<BubbleProperties>().isBird)
                         {
                             SoundManager.Instance.ClickBirdSound();
-                            temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                            temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
+                            //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
+                            //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
                            // gameManager.birds_rescued++;
                           //  gameManager.Level_Score += 10;          // scoring bird
                             //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
@@ -647,8 +647,8 @@ public class Obstacle : MonoBehaviour {
                         if (temp.GetComponent<BubbleProperties>().isBird)
                         {
                             SoundManager.Instance.ClickBirdSound();
-                            temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                            temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
+                            //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
+                            //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
                            // gameManager.birds_rescued++;
                           //  gameManager.Level_Score += 10;          // scoring bird
                             //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
@@ -716,8 +716,8 @@ public class Obstacle : MonoBehaviour {
                     if (colliders[i].GetComponent<BubbleProperties>().isBird)
                     {
                         SoundManager.Instance.ClickBirdSound();
-                        colliders[i].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                        colliders[i].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
+                        //colliders[i].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
+                        //colliders[i].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
                         //gameManager.birds_rescued++;
                        // gameManager.Level_Score += 10;          // scoring bird
                         //GameObject flyer=ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
@@ -746,8 +746,8 @@ public class Obstacle : MonoBehaviour {
         if (nearestDistance[dist].GetComponent<BubbleProperties>().isBird)
         {
             SoundManager.Instance.ClickBirdSound();
-            nearestDistance[dist].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-            nearestDistance[dist].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
+            //nearestDistance[dist].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
+            //nearestDistance[dist].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
             //gameManager.birds_rescued++;
            // gameManager.Level_Score += 10;          // scoring bird
         }

@@ -392,8 +392,8 @@ public class GameManager:MonoBehaviour{
                             if (MatrixGrid[i][j].GetComponent<BubbleProperties>().isBird)
                             {
                                 SoundManager.Instance.ClickBirdSound();
-                                MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                                MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
+                                //MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
+                                //MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
                                 // birds_rescued=birds_rescued+1;
                                 falling_Count++;
 
@@ -430,8 +430,8 @@ public class GameManager:MonoBehaviour{
                             if (MatrixGrid[i][j].GetComponent<BubbleProperties>().isBird)
                             {
                                 SoundManager.Instance.ClickBirdSound();
-                                MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                                MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
+                                //MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
+                                //MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
                                 // birds_rescued = birds_rescued + 1;
                                 falling_Count++;
                             }
