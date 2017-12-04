@@ -388,17 +388,7 @@ public class GameManager:MonoBehaviour{
                     {
                         if (!MatrixGrid[i][j].GetComponent<BubbleProperties>().isEmpty)
                         {
-                            if (MatrixGrid[i][j].GetComponent<BubbleProperties>().isBird)
-                            {
-                                SoundManager.Instance.ClickBirdSound();
-                                //MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                                //MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
-                                // birds_rescued=birds_rescued+1;
-                                falling_Count++;
-
-                            }
-                            else
-                            {
+                            
                                 GameObject temp = ObjectPool.GetPooledObject();
                                 temp.transform.parent = MatrixGrid[i][j].transform.parent;
                                 temp.transform.position = MatrixGrid[i][j].transform.position;
@@ -410,8 +400,7 @@ public class GameManager:MonoBehaviour{
                                 int RandForce = UnityEngine.Random.Range(1000, 1200);
                                 ExplosionForce2D.AddExplosionForce(temp.GetComponent<Rigidbody2D>(), RandForce, Vector2.up, 5);
 
-
-                            }
+                            
                             MatrixGrid[i][j].GetComponent<BubbleProperties>().isEmpty = true;
                         }
                     }
@@ -426,16 +415,7 @@ public class GameManager:MonoBehaviour{
                     {
                         if (!MatrixGrid[i][j].GetComponent<BubbleProperties>().isEmpty)
                         {
-                            if (MatrixGrid[i][j].GetComponent<BubbleProperties>().isBird)
-                            {
-                                SoundManager.Instance.ClickBirdSound();
-                                //MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                                //MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
-                                // birds_rescued = birds_rescued + 1;
-                                falling_Count++;
-                            }
-                            else
-                            {
+                            
                                 GameObject temp = ObjectPool.GetPooledObject();
                                 temp.transform.parent = MatrixGrid[i][j].transform.parent;
                                 temp.transform.position = MatrixGrid[i][j].transform.position;
@@ -446,7 +426,7 @@ public class GameManager:MonoBehaviour{
                                 int RandForce = UnityEngine.Random.Range(1000, 1100);
                                 ExplosionForce2D.AddExplosionForce(temp.GetComponent<Rigidbody2D>(), RandForce, Vector2.up, 5);
                                 //print("Calling Fall Down...");
-                            }
+                            
 
 
                             MatrixGrid[i][j].GetComponent<BubbleProperties>().isEmpty = true;
@@ -592,9 +572,6 @@ public class GameManager:MonoBehaviour{
             case "clearAll":
                 ClearAllFunctionality();
                 break;
-            case "freeBirds":
-                FreeBirdsFunctionality();
-                break;
             case "topRow":
                 ClearAllFunctionality();
                 break;
@@ -612,80 +589,6 @@ public class GameManager:MonoBehaviour{
 
 
 
-    void FreeBirdsFunctionality()
-    {
-
-        //if (birds_rescued >= GamePrefs.NO_OF_BIRDS)
-        //{
-        //    for (int i = 0; i < Num_Of_Rows; i++)
-        //    {
-        //        if (i % 2 == 0)
-        //        {
-        //            for (int j = 0; j < Num_Of_Columns; j++)
-        //            {
-        //                if (!MatrixGrid[i][j].GetComponent<BubbleProperties>().isEmpty)
-        //                {
-        //                    if (MatrixGrid[i][j].GetComponent<BubbleProperties>().isBird)
-        //                    {
-        //                        SoundManager.Instance.ClickBirdSound();
-        //                        MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-        //                        MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
-        //                    }
-        //                    else
-        //                    {
-        //                        GameObject temp = ObjectPool.GetPooledObject();
-        //                        temp.transform.parent = MatrixGrid[i][j].transform.parent;
-        //                        temp.transform.position = MatrixGrid[i][j].transform.position;
-        //                        temp.transform.localScale = MatrixGrid[i][j].transform.localScale;
-        //                        temp.GetComponent<FallingBubbleScript>().BubbleColor = MatrixGrid[i][j].GetComponent<BubbleProperties>().BubbleColor;
-        //                        temp.SetActive(true);
-        //                        int RandForce = UnityEngine.Random.Range(1000, 1100);
-        //                        ExplosionForce2D.AddExplosionForce(temp.GetComponent<Rigidbody2D>(), RandForce, Vector2.up, 5);
-        //                    }
-
-
-        //                    MatrixGrid[i][j].GetComponent<BubbleProperties>().isEmpty = true;
-        //                }
-
-        //            }
-        //        }
-        //        else
-        //        {
-        //            for (int j = 0; j < Num_Of_Columns - 1; j++)
-        //            {
-        //                if (!MatrixGrid[i][j].GetComponent<BubbleProperties>().isEmpty)
-        //                {
-        //                    if (MatrixGrid[i][j].GetComponent<BubbleProperties>().isBird)
-        //                    {
-        //                        SoundManager.Instance.ClickBirdSound();
-        //                        MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-        //                        MatrixGrid[i][j].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
-        //                    }
-        //                    else
-        //                    {
-        //                        GameObject temp = ObjectPool.GetPooledObject();
-        //                        temp.transform.parent = MatrixGrid[i][j].transform.parent;
-        //                        temp.transform.position = MatrixGrid[i][j].transform.position;
-        //                        temp.transform.localScale = MatrixGrid[i][j].transform.localScale;
-        //                        temp.GetComponent<FallingBubbleScript>().BubbleColor = MatrixGrid[i][j].GetComponent<BubbleProperties>().BubbleColor;
-        //                        temp.SetActive(true);
-        //                        int RandForce = UnityEngine.Random.Range(1000, 1100);
-        //                        ExplosionForce2D.AddExplosionForce(temp.GetComponent<Rigidbody2D>(), RandForce, Vector2.up, 5);
-        //                    }
-
-
-        //                    MatrixGrid[i][j].GetComponent<BubbleProperties>().isEmpty = true;
-        //                }
-        //            }
-        //        }
-
-        //    }
-
-        //    OnLevel_Cleared();
-        //    GamePrefs.temp_no_of_bubbles_remaining = GamePrefs.NO_OF_BUBBLES;
-
-        //}
-    }
 
     void ClearAllFunctionality()
     {
@@ -733,16 +636,9 @@ public class GameManager:MonoBehaviour{
     void ShootCannonEmpty()
     {
         
-        //GamePrefs.level_count_for_Rate_Us++;
-        if(PlayerPrefs.GetInt("RateUsDone")==0)// && GamePrefs.level_count_for_Rate_Us==3)
-        {
-           // GamePrefs.level_count_for_Rate_Us = 0;
-
-        }
-        else
-        {
-            PanelEnabler.GetComponent<Activators>().ActiveClear();
-        }
+       
+         PanelEnabler.GetComponent<Activators>().ActiveClear();
+        
     }
 
 

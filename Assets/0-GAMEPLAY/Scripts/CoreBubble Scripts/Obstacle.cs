@@ -313,28 +313,14 @@ public class Obstacle : MonoBehaviour {
             foreach (Transform temp in gameManager.colorMatcher)
             {
                 
-                if (temp.GetComponent<BubbleProperties>().isBird)
-                {
-                    SoundManager.Instance.ClickBirdSound();
-                    //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                    //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
-                    //gameManager.birds_rescued++;
-                    GamePrefs.lEVEL_SCORE += 10;
-                    temp.GetComponent<BubbleProperties>().isBird = false;
-                    //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
-                    //flyer.GetComponent<ScoreFly>().ScoreToFly = 10;
-                    //flyer.transform.position = temp.gameObject.transform.position;
-                    //flyer.SetActive(true);
-                }
-                else
-                {
+                
                     //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
                     //flyer.GetComponent<ScoreFly>().ScoreToFly = 5;
                     //flyer.transform.position = temp.gameObject.transform.position;
                     //flyer.SetActive(true);
                     //gameManager.Level_Score += 5;
                     GamePrefs.lEVEL_SCORE += 5;
-                }
+                
                // GameObject pop_anim = pop_pooler.GetPooledObject();
                 //pop_anim.transform.position = temp.transform.position;
                 //pop_anim.transform.rotation = Quaternion.identity;
@@ -425,26 +411,13 @@ public class Obstacle : MonoBehaviour {
         {
             if (!temp.GetComponent<BubbleProperties>().isEmpty)
             {
-                if (temp.GetComponent<BubbleProperties>().isBird)
-                {
-                    SoundManager.Instance.ClickBirdSound();
-                    //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                    //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
-                    //gameManager.birds_rescued++;
-                   // gameManager.Level_Score += 10;          // scoring bird
-                    //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
-                    //flyer.GetComponent<ScoreFly>().ScoreToFly = 10;
-                    //flyer.transform.position = temp.gameObject.transform.position;
-                    //flyer.SetActive(true);
-                }
-                else
-                {
+                
                     //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
                     //flyer.GetComponent<ScoreFly>().ScoreToFly = 5;
                     //flyer.transform.position = temp.gameObject.transform.position;
                     //flyer.SetActive(true);
                     //gameManager.Level_Score += 5;
-                }
+                
                // GameObject pop_anim = pop_pooler.GetPooledObject();
                 //pop_anim.transform.position =temp.transform.position;
                 //pop_anim.transform.rotation = Quaternion.identity;
@@ -494,26 +467,13 @@ public class Obstacle : MonoBehaviour {
                     if(gameManager.MatrixGrid[i][j].GetComponent<BubbleProperties>().BubbleColor==cp && !gameManager.MatrixGrid[i][j].GetComponent<BubbleProperties>().isEmpty)
                     {
                         Transform temp = gameManager.MatrixGrid[i][j];
-                        if (temp.GetComponent<BubbleProperties>().isBird)
-                        {
-                            SoundManager.Instance.ClickBirdSound();
-                            //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                            //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
-                           // gameManager.birds_rescued++;
-                          //  gameManager.Level_Score += 10;          // scoring bird
-                            //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
-                            //flyer.GetComponent<ScoreFly>().ScoreToFly = 10;
-                            //flyer.transform.position = temp.gameObject.transform.position;
-                            //flyer.SetActive(true);
-                        }
-                        else
-                        {
+                       
                             //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
                             //flyer.GetComponent<ScoreFly>().ScoreToFly = 5;
                             //flyer.transform.position = temp.gameObject.transform.position;
                             //flyer.SetActive(true);
                            // gameManager.Level_Score += 5;
-                        }
+                        
                         //GameObject pop_anim = pop_pooler.GetPooledObject();
                         //pop_anim.transform.position = temp.transform.position;
                         //pop_anim.transform.rotation = Quaternion.identity;
@@ -532,26 +492,13 @@ public class Obstacle : MonoBehaviour {
                     if (gameManager.MatrixGrid[i][j].GetComponent<BubbleProperties>().BubbleColor == cp && !gameManager.MatrixGrid[i][j].GetComponent<BubbleProperties>().isEmpty)
                     {
                         Transform temp = gameManager.MatrixGrid[i][j];
-                        if (temp.GetComponent<BubbleProperties>().isBird)
-                        {
-                            SoundManager.Instance.ClickBirdSound();
-                            //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                            //temp.GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
-                           // gameManager.birds_rescued++;
-                          //  gameManager.Level_Score += 10;          // scoring bird
-                            //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
-                            //flyer.GetComponent<ScoreFly>().ScoreToFly = 10;
-                            //flyer.transform.position = temp.gameObject.transform.position;
-                            //flyer.SetActive(true);
-                        }
-                        else
-                        {
+                        
                             //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
                             //flyer.GetComponent<ScoreFly>().ScoreToFly = 5;
                             //flyer.transform.position = temp.gameObject.transform.position;
                             //flyer.SetActive(true);
                             //gameManager.Level_Score += 5;
-                        }
+                        
                         //GameObject pop_anim = pop_pooler.GetPooledObject();
                         //pop_anim.transform.position = temp.transform.position;
                         //pop_anim.transform.rotation = Quaternion.identity;
@@ -601,26 +548,13 @@ public class Obstacle : MonoBehaviour {
             {
                 if (!colliders[i].GetComponent<BubbleProperties>().isEmpty)
                 {
-                    if (colliders[i].GetComponent<BubbleProperties>().isBird)
-                    {
-                        SoundManager.Instance.ClickBirdSound();
-                        //colliders[i].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-                        //colliders[i].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
-                        //gameManager.birds_rescued++;
-                       // gameManager.Level_Score += 10;          // scoring bird
-                        //GameObject flyer=ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
-                        //flyer.GetComponent<ScoreFly>().ScoreToFly = 10;
-                        //flyer.transform.position = colliders[i].gameObject.transform.position;
-                        //flyer.SetActive(true);
-                    }
-                    else
-                    {
+                   
                         //GameObject flyer = ObjectPool_ScoreFly.GetComponent<ObjectPoolScript>().GetPooledObject();
                         //flyer.GetComponent<ScoreFly>().ScoreToFly = 5;
                         //flyer.transform.position = colliders[i].gameObject.transform.position;
                         //flyer.SetActive(true);
                        // gameManager.Level_Score += 5;
-                    }
+                    
                     //GameObject pop_anim = pop_pooler.GetPooledObject();
                     //pop_anim.transform.position = colliders[i].transform.position;
                     //pop_anim.transform.rotation = Quaternion.identity;
@@ -631,18 +565,8 @@ public class Obstacle : MonoBehaviour {
                 }
             }
         }
-        if (nearestDistance[dist].GetComponent<BubbleProperties>().isBird)
-        {
-            SoundManager.Instance.ClickBirdSound();
-            //nearestDistance[dist].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<Animator>().SetTrigger("FreeBird");
-            //nearestDistance[dist].GetComponent<BubbleProperties>().Native_Bird_Object.GetComponent<TweenBird>().tweener = true;
-            //gameManager.birds_rescued++;
-           // gameManager.Level_Score += 10;          // scoring bird
-        }
-        //else
-        //{
-        //    gameManager.Level_Score += 5;
-        //}
+       
+       
         nearestDistance[dist].GetComponent<BubbleProperties>().isEmpty = true;
         GameObject temp2;
         //switch(special_type)

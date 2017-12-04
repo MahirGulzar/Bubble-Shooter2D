@@ -22,12 +22,9 @@ public class BubbleProperties : MonoBehaviour {
     public bool showRenderer;
     public bool isEmpty=true;
     public bool inStack = false;
-    public bool isBird = false;
     public bool inRadius = false;
     public ColorProperty  BubbleColor;
 
-
-    public GameObject Native_Bird_Object;
     
 
     public Transform Top_Left,Top_Right,Left,Right,Bottom_Left,Bottom_Right;

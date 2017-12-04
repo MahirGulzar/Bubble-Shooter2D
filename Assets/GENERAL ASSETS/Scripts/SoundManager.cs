@@ -105,10 +105,6 @@ public class SoundManager : Singleton<SoundManager> {
         }
     }
 
-    public void ClickBirdSound()
-    {
-        //OneShotAudioSource.PlayOneShot(PlaySparrowSound);
-    }
 
 
     public void ClickOneStarSound()

@@ -46,14 +46,6 @@ public class XMLReaderExample : MonoBehaviour
         GamePrefs.temp_no_of_bubbles = attribute_num_of_bubbles;
 
 
-        //Number of Birds to rescue in a level
-        //string number_of_birds = LevelXML.GetValue("LevelsContainer>0>Coordinates>0>Level" + GamePrefs.CURRENT_LEVEL + ">0>@BirdsToFree");
-        //int attribute_num_of_birds;
-        //int.TryParse(number_of_birds, out attribute_num_of_birds);
-        //if (attribute_num_of_birds > 0)
-        //    GamePrefs.NO_OF_BIRDS = attribute_num_of_birds;
-        //print(GamePrefs.NO_OF_BIRDS);
-
     }
     void Start()
     {
@@ -103,21 +95,7 @@ public class XMLReaderExample : MonoBehaviour
                     break;
             }
 
-           //string isBirdy= LevelXML.GetValue("LevelsContainer>0>Coordinates>0>Level" + GamePrefs.CURRENT_LEVEL + ">0>value>" + i + ">@Bird");
-           ////print("x " +_attribute_x_ValueInt);
-           ////print("y" + _attribute_y_ValueInt);
-           ////print(isBirdy);
-           // if(isBirdy=="1")
-           // {
-           //     GameManager gameManager = GameManager.FindObjectOfType<GameManager>();
-           //     gameManager.MatrixGrid[_attribute_x_ValueInt][_attribute_y_ValueInt].GetComponent<BubbleProperties>().isBird = true;
-           //     BubbleProperties b_properties = gameManager.MatrixGrid[_attribute_x_ValueInt][_attribute_y_ValueInt].GetComponent<BubbleProperties>();
-           //     b_properties.Native_Bird_Object = GameObject.Find("ObjectPooling_" + b_properties.BubbleColor + "_Bird").GetComponent<ObjectPoolScript>().GetPooledObject();
-           //     b_properties.Native_Bird_Object.transform.parent = gameManager.MatrixGrid[_attribute_x_ValueInt][_attribute_y_ValueInt].transform.parent;
-           //     b_properties.Native_Bird_Object.transform.position = gameManager.MatrixGrid[_attribute_x_ValueInt][_attribute_y_ValueInt].transform.position;
-           //     b_properties.Native_Bird_Object.transform.localScale = gameManager.MatrixGrid[_attribute_x_ValueInt][_attribute_y_ValueInt].transform.localScale;
-           //     b_properties.Native_Bird_Object.SetActive(true);
-           // }
+         
         }
     }
 }
