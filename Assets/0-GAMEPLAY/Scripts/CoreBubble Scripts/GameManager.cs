@@ -42,7 +42,6 @@ public class GameManager:MonoBehaviour{
     public Action OnLevel_Cleared;
     public Action OnLevelFailed;
     public Action OnShootCannonEmpty;
-    public Action OnVoiceOvers;
 
 
 

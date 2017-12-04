@@ -21,7 +21,6 @@ public class Obstacle : MonoBehaviour {
     public GameObject BubblePop_Animation;
  
 
-    public GameObject VoiceOver;
 
 
     // temps
