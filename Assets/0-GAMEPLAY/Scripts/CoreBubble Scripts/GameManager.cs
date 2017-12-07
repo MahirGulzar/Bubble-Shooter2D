@@ -112,6 +112,7 @@ public class GameManager:MonoBehaviour{
     {
         this.OnMatch_three+= this.OnGridPlacementConnected;
         this.OnShootCannonEmpty += this.ShootCannonEmpty;
+        this.OnLevelFailed += this.LevelFailed;
 
     }
 
@@ -121,6 +122,7 @@ public class GameManager:MonoBehaviour{
     {
         this.OnMatch_three -= this.OnGridPlacementConnected;
         this.OnShootCannonEmpty -= this.ShootCannonEmpty;
+        this.OnLevelFailed -= this.LevelFailed;
     }
 
 
@@ -630,6 +632,11 @@ public class GameManager:MonoBehaviour{
         
     }
 
+
+    void LevelFailed()
+    {
+        LevelFailPanel.SetActive(true);
+    }
 
 
 }

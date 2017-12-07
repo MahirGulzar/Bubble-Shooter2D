@@ -165,17 +165,9 @@ public class Aim_and_Shoot : MonoBehaviour {
 
         if(GamePrefs.NO_OF_BUBBLES==0 && !isLevel_Cleared )
         {
-            if (PlayerPrefs.GetInt("NO_OF_COINS") >= 25)
-            {
-                //gameManager.PanelEnabler.GetComponent<Activators>().ActiveBuyBubbleStore();
-
-            }
-            else
-            {
-
+           
                gameManager.OnLevelFailed();
-            }
-            // Buy Menu
+
         }
         
     }
