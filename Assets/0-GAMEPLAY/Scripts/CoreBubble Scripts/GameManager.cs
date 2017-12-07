@@ -104,6 +104,9 @@ public class GameManager:MonoBehaviour{
 
 
     public Sprite[] sp_bubble;
+
+    public GameObject LevelClearPanel;
+    public GameObject LevelFailPanel;
     
     void OnEnable()
     {
@@ -621,7 +624,9 @@ public class GameManager:MonoBehaviour{
     {
         
        
-         PanelEnabler.GetComponent<Activators>().ActiveClear();
+        // PanelEnabler.GetComponent<Activators>().ActiveClear();
+        LevelClearPanel.SetActive(true);
+
         
     }
 

@@ -173,7 +173,7 @@ public class Aim_and_Shoot : MonoBehaviour {
             else
             {
 
-               // gameManager.OnLevelFailed();
+               gameManager.OnLevelFailed();
             }
             // Buy Menu
         }
@@ -276,6 +276,7 @@ public class Aim_and_Shoot : MonoBehaviour {
     IEnumerator WaitTillFallingBubbles()
     {
         yield return new WaitForSeconds(1f);
+        gameManager.OnShootCannonEmpty();
         yield return new WaitUntil(() => BubblePooler.Deactive_Count == BubblePooler.pooledObjects.Count);
         //print("all deactivated");
         if (GamePrefs.NO_OF_BUBBLES > 0)
