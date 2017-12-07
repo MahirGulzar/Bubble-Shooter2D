@@ -101,6 +101,9 @@ public class GameManager:MonoBehaviour{
 
 	// iNitial mids pivots
 	public Pivots pivots;
+
+
+    public Sprite[] sp_bubble;
     
     void OnEnable()
     {

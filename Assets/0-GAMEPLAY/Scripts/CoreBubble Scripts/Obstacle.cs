@@ -50,30 +50,30 @@ public class Obstacle : MonoBehaviour {
         this.BubbleColor = GameObject.FindObjectOfType<NextBubbleManager>().GetCurrent();
         switch (this.BubbleColor)
         {
-            case ColorProperty.Green:
-                // sp.sprite = gameManager.sp_bubble[0];
-                sp.color = new Color(0, 1, 0);
-                break;
-            case ColorProperty.Blue:
-                // sp.sprite = gameManager.sp_bubble[1];
-                sp.color = new Color(0, 0, 1);
-                break;
-            case ColorProperty.Yellow:
-                // sp.sprite = gameManager.sp_bubble[2];
-                sp.color = new Color(1, 1, 0);
-                break;
-            case ColorProperty.Red:
-                //sp.sprite = gameManager.sp_bubble[3];
-                sp.color = new Color(1, 0, 0);
-                break;
-            case ColorProperty.Purple:
-                // sp.sprite = gameManager.sp_bubble[4];
-                sp.color = new Color32(238, 130, 238, 255);
-                break;
-            case ColorProperty.Black:
-                // sp.sprite = gameManager.sp_bubble[5];
-                sp.color = new Color(0, 1, 0);
-                break;
+           case ColorProperty.Green:
+                    sp.sprite = gameManager.sp_bubble[0];
+                    //sp.color = new Color(0, 1, 0);
+                    break;
+                case ColorProperty.Blue:
+                    sp.sprite = gameManager.sp_bubble[1];
+                    //sp.color = new Color(0, 0, 1);
+                    break;
+                case ColorProperty.Yellow:
+                    sp.sprite = gameManager.sp_bubble[2];
+                    //sp.color = new Color(1, 1, 0);
+                    break;
+                case ColorProperty.Red:
+                    sp.sprite = gameManager.sp_bubble[3];
+                    //sp.color = new Color(1, 0, 0);
+                    break;
+                case ColorProperty.Purple:
+                    sp.sprite = gameManager.sp_bubble[4];
+                    //sp.color = new Color32(238, 130, 238, 255);
+                    break;
+                case ColorProperty.Black:
+                    sp.sprite = gameManager.sp_bubble[5];
+                    //sp.color = new Color(0, 1, 0);
+                    break;
         }
 
     }
@@ -120,22 +120,28 @@ public class Obstacle : MonoBehaviour {
         switch (this.BubbleColor)
         {
             case ColorProperty.Green:
-                //sp.sprite = gameManager.sp_bubble[0];
+                sp.sprite = gameManager.sp_bubble[0];
+                //sp.color = new Color(0, 1, 0);
                 break;
             case ColorProperty.Blue:
-                //sp.sprite = gameManager.sp_bubble[1];
+                sp.sprite = gameManager.sp_bubble[1];
+                //sp.color = new Color(0, 0, 1);
                 break;
             case ColorProperty.Yellow:
-                //sp.sprite = gameManager.sp_bubble[2];
+                sp.sprite = gameManager.sp_bubble[2];
+                //sp.color = new Color(1, 1, 0);
                 break;
             case ColorProperty.Red:
-                //sp.sprite = gameManager.sp_bubble[3];
+                sp.sprite = gameManager.sp_bubble[3];
+                //sp.color = new Color(1, 0, 0);
                 break;
             case ColorProperty.Purple:
-               // sp.sprite = gameManager.sp_bubble[4];
+                sp.sprite = gameManager.sp_bubble[4];
+                //sp.color = new Color32(238, 130, 238, 255);
                 break;
             case ColorProperty.Black:
-                //sp.sprite = gameManager.sp_bubble[5];
+                sp.sprite = gameManager.sp_bubble[5];
+                //sp.color = new Color(0, 1, 0);
                 break;
         }
         yield return new WaitForSeconds(0.4f);
@@ -300,7 +306,9 @@ public class Obstacle : MonoBehaviour {
         nearestDistance[dist].GetComponent<BubbleProperties>().BubbleColor = this.BubbleColor;
         nearestDistance[dist].GetComponent<BubbleProperties>().SearchMatchingNeighbours();
         nearestDistance[dist].GetComponent<BubbleProperties>().inStack = false;
-
+        //nearestDistance[dist].GetComponent<SpriteRenderer>().sprite = sp.sprite;
+        //nearestDistance[dist].GetComponent<SpriteRenderer>().enabled = true;
+        //print(nearestDistance[dist].name);
 
         prev_Score = GamePrefs.lEVEL_SCORE;
 

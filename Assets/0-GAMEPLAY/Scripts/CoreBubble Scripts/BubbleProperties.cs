@@ -95,28 +95,28 @@ public class BubbleProperties : MonoBehaviour {
             switch (BubbleColor)
             {
                 case ColorProperty.Green:
-                    // sp.sprite = gameManager.sp_bubble[0];
-                    sp.color = new Color(0, 1, 0);
+                    sp.sprite = gameManager.sp_bubble[0];
+                    //sp.color = new Color(0, 1, 0);
                     break;
                 case ColorProperty.Blue:
-                    //  sp.sprite = gameManager.sp_bubble[1];
-                    sp.color = new Color(0, 0, 1);
+                    sp.sprite = gameManager.sp_bubble[1];
+                    //sp.color = new Color(0, 0, 1);
                     break;
                 case ColorProperty.Yellow:
-                    // sp.sprite = gameManager.sp_bubble[2];
-                    sp.color = new Color(1, 1, 0);
+                    sp.sprite = gameManager.sp_bubble[2];
+                    //sp.color = new Color(1, 1, 0);
                     break;
                 case ColorProperty.Red:
-                    //sp.sprite = gameManager.sp_bubble[3];
-                    sp.color = new Color(1, 0, 0);
+                    sp.sprite = gameManager.sp_bubble[3];
+                    //sp.color = new Color(1, 0, 0);
                     break;
                 case ColorProperty.Purple:
-                    // sp.sprite = gameManager.sp_bubble[4];
-                    sp.color = new Color32(238, 130, 238, 255);
+                    sp.sprite = gameManager.sp_bubble[4];
+                    //sp.color = new Color32(238, 130, 238, 255);
                     break;
                 case ColorProperty.Black:
-                    // sp.sprite = gameManager.sp_bubble[5];
-                    sp.color = new Color(0, 1, 0);
+                    sp.sprite = gameManager.sp_bubble[5];
+                    //sp.color = new Color(0, 1, 0);
                     break;
             }
             Color tempColor = new Color(1, 1, 1, 1f);
@@ -159,28 +159,28 @@ public class BubbleProperties : MonoBehaviour {
             switch (BubbleColor)
             {
                 case ColorProperty.Green:
-                    // sp.sprite = gameManager.sp_bubble[0];
-                    sp.color = new Color(0, 1, 0);
+                    sp.sprite = gameManager.sp_bubble[0];
+                    //sp.color = new Color(0, 1, 0);
                     break;
                 case ColorProperty.Blue:
-                    //sp.sprite = gameManager.sp_bubble[1];
-                    sp.color = new Color(0, 0, 1);
+                    sp.sprite = gameManager.sp_bubble[1];
+                    //sp.color = new Color(0, 0, 1);
                     break;
                 case ColorProperty.Yellow:
-                    // sp.sprite = gameManager.sp_bubble[2];
-                    sp.color = new Color(1, 1, 0);
+                    sp.sprite = gameManager.sp_bubble[2];
+                    //sp.color = new Color(1, 1, 0);
                     break;
                 case ColorProperty.Red:
-                    //sp.sprite = gameManager.sp_bubble[3];
-                    sp.color = new Color(1, 0, 0);
+                    sp.sprite = gameManager.sp_bubble[3];
+                    //sp.color = new Color(1, 0, 0);
                     break;
                 case ColorProperty.Purple:
-                    //sp.sprite = gameManager.sp_bubble[4];
-                    sp.color = new Color32(238, 130, 238, 255);
+                    sp.sprite = gameManager.sp_bubble[4];
+                    //sp.color = new Color32(238, 130, 238, 255);
                     break;
                 case ColorProperty.Black:
-                    // sp.sprite = gameManager.sp_bubble[5
-                    sp.color = new Color(0, 1, 0);
+                    sp.sprite = gameManager.sp_bubble[5];
+                    //sp.color = new Color(0, 1, 0);
                     break;
             }
         }
@@ -410,34 +410,32 @@ public class BubbleProperties : MonoBehaviour {
             switch (BubbleColor)
             {
                 case ColorProperty.Green:
-                    //sp.sprite = gameManager.sp_bubble[0];
-                    sp.color = new Color(0, 1, 0);
+                    sp.sprite = gameManager.sp_bubble[0];
+                    //sp.color = new Color(0, 1, 0);
                     break;
                 case ColorProperty.Blue:
-                    //  sp.sprite = gameManager.sp_bubble[1];
-                    sp.color = new Color(0, 0, 1);
+                    sp.sprite = gameManager.sp_bubble[1];
+                    //sp.color = new Color(0, 0, 1);
                     break;
                 case ColorProperty.Yellow:
-                    sp.color = new Color(1, 1, 0);
-                    //sp.sprite = gameManager.sp_bubble[2];
-                    //
+                    sp.sprite = gameManager.sp_bubble[2];
+                    //sp.color = new Color(1, 1, 0);
                     break;
                 case ColorProperty.Red:
-                    // sp.sprite = gameManager.sp_bubble[3];
-                    sp.color = new Color(1, 0, 0);
+                    sp.sprite = gameManager.sp_bubble[3];
+                    //sp.color = new Color(1, 0, 0);
                     break;
                 case ColorProperty.Purple:
-                    // sp.sprite = gameManager.sp_bubble[4];
-                    //sp.color = new Color(0, 1, 0);
-                    sp.color = new Color32(238, 130, 238, 255);
+                    sp.sprite = gameManager.sp_bubble[4];
+                    //sp.color = new Color32(238, 130, 238, 255);
                     break;
                 case ColorProperty.Black:
-                    // sp.sprite = gameManager.sp_bubble[5];
-                    sp.color = new Color(0, 1, 0);
+                    sp.sprite = gameManager.sp_bubble[5];
+                    //sp.color = new Color(0, 1, 0);
                     break;
             }
-           // Color tempColor = new Color(1, 1, 1, 1f);
-           // this.GetComponent<SpriteRenderer>().color = tempColor;
+            Color tempColor = new Color(1, 1, 1, 1f);
+            this.GetComponent<SpriteRenderer>().color = tempColor;
             this.GetComponent<CircleCollider2D>().isTrigger = false;
         }
 

@@ -2,7 +2,7 @@
  <LevelsContainer>
          <Coordinates id ="1">
 
-           <Level0 attribute_objective="clearAll" numberOfBubbles="100" numberOfRows="16">
+           <Level0 attribute_objective="clearAll" numberOfBubbles="30" numberOfRows="16">
              <value attribute_i="0" attribute_j="1" attribute_color="Red" ></value>
              <value attribute_i="0" attribute_j="2" attribute_color="Red" ></value>
              <value attribute_i="0" attribute_j="3" attribute_color="Red" ></value>
