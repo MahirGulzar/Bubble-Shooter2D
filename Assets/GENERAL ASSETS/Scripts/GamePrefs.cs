@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public static class GamePrefs {
 
-    public static int CURRENT_LEVEL=6;
+    public static int CURRENT_LEVEL=9;
     public static bool[] SCENE_COLORS= new bool[6];
     public static int NO_OF_SCENE_COLORS;
     public static string LEVEL_OBJECTIVE;
