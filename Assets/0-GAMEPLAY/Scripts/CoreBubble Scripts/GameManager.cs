@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.SceneManagement;
 
 public class GameManager:MonoBehaviour{
 
@@ -107,6 +108,7 @@ public class GameManager:MonoBehaviour{
 
     public GameObject LevelClearPanel;
     public GameObject LevelFailPanel;
+    public GameObject NextButton;
     
     void OnEnable()
     {
@@ -624,9 +626,13 @@ public class GameManager:MonoBehaviour{
 	
     void ShootCannonEmpty()
     {
-        
-       
+
+
         // PanelEnabler.GetComponent<Activators>().ActiveClear();
+        if (GamePrefs.CURRENT_LEVEL + 1 > 9)
+        {
+            NextButton.SetActive(false);
+        }
         LevelClearPanel.SetActive(true);
 
         
@@ -635,8 +641,37 @@ public class GameManager:MonoBehaviour{
 
     void LevelFailed()
     {
+        
         LevelFailPanel.SetActive(true);
     }
 
+
+    public void Restart()
+    {
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GamePrefs.LEVEL_OBJECTIVE = "";
+        GamePrefs.NO_OF_BUBBLES = 0;
+        GamePrefs.NO_OF_SCENE_COLORS = 0;
+        for (int i = 0; i < GamePrefs.SCENE_COLORS.Length; i++)
+        {
+            GamePrefs.SCENE_COLORS[i] = false;
+        }
+        Destroy(this.gameObject);
+    }
+
+    public void NextLevel()
+    {
+        GamePrefs.CURRENT_LEVEL++;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GamePrefs.LEVEL_OBJECTIVE = "";
+        GamePrefs.NO_OF_BUBBLES = 0;
+        GamePrefs.NO_OF_SCENE_COLORS = 0;
+        for (int i = 0; i < GamePrefs.SCENE_COLORS.Length; i++)
+        {
+            GamePrefs.SCENE_COLORS[i] = false;
+        }
+        Destroy(this.gameObject);
+    }
 
 }

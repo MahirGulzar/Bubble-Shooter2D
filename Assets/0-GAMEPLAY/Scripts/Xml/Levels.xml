@@ -355,7 +355,7 @@
              
            </Level4>
 
-           <Level5 attribute_objective="clearAll" numberOfBubbles="40"  numberOfRows="16">
+           <Level5 attribute_objective="clearAll" numberOfBubbles="60"  numberOfRows="16">
 
              <value attribute_i="0" attribute_j="0" attribute_color="Purple" ></value>
              <value attribute_i="0" attribute_j="1" attribute_color="Yellow"  ></value>
@@ -569,7 +569,7 @@
              <colors attribute="5"></colors>
            </Level7>
            
-          <Level8 attribute_objective="clearAll" numberOfBubbles="40"  numberOfRows="16">
+          <Level8 attribute_objective="clearAll" numberOfBubbles="60"  numberOfRows="16">
 
             <value attribute_i="0" attribute_j="0" attribute_color="Red"  ></value>
              <value attribute_i="0" attribute_j="1" attribute_color="Green"  ></value>
