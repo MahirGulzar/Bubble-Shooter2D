@@ -19,7 +19,7 @@ public class Obstacle : MonoBehaviour {
 
     public Transform Android_Pos;
     public GameObject BubblePop_Animation;
- 
+    public ObjectPoolScript pop_pooler;
 
 
 
@@ -321,22 +321,22 @@ public class Obstacle : MonoBehaviour {
             {
                 
                   GamePrefs.lEVEL_SCORE += 5;
-                
-               // GameObject pop_anim = pop_pooler.GetPooledObject();
-                //pop_anim.transform.position = temp.transform.position;
-                //pop_anim.transform.rotation = Quaternion.identity;
-                //pop_anim.transform.localScale = temp.transform.localScale;
-                //pop_anim.SetActive(true);
+
+                GameObject pop_anim = pop_pooler.GetPooledObject();
+                pop_anim.transform.position = temp.transform.position;
+                pop_anim.transform.rotation = Quaternion.identity;
+                pop_anim.transform.localScale = temp.transform.localScale;
+                pop_anim.SetActive(true);
 
                 temp.GetComponent<BubbleProperties>().isEmpty = true;
 
             }
 
-            //GameObject pop_anim_again = pop_pooler.GetPooledObject();
-            //pop_anim_again.transform.position = nearestDistance[dist].transform.position;
-            //pop_anim_again.transform.rotation = Quaternion.identity;
-            //pop_anim_again.transform.localScale = nearestDistance[dist].transform.localScale;
-            //pop_anim_again.SetActive(true);
+            GameObject pop_anim_again = pop_pooler.GetPooledObject();
+            pop_anim_again.transform.position = nearestDistance[dist].transform.position;
+            pop_anim_again.transform.rotation = Quaternion.identity;
+            pop_anim_again.transform.localScale = nearestDistance[dist].transform.localScale;
+            pop_anim_again.SetActive(true);
             nearestDistance[dist].GetComponent<BubbleProperties>().isEmpty = true;
 
 

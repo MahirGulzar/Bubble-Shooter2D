@@ -5,7 +5,7 @@ public class DeactiveCurrent : MonoBehaviour {
 
 	void OnEnable()
     {
-        Invoke("Destroy", 1f);
+        Invoke("Destroy", 0.75f);
     }
 
     void Destroy()
