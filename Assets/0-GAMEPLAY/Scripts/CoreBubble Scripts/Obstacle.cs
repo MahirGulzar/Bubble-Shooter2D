@@ -30,8 +30,8 @@ public class Obstacle : MonoBehaviour {
     {
     gameManager = GameManager.FindObjectOfType<GameManager>();
 
-    #if UNITY_ANDROID
-    this.transform.localScale = Android_Pos.transform.localScale;
+#if UNITY_ANDROID || UNITY_STANDALONE_WIN
+        this.transform.localScale = Android_Pos.transform.localScale;
     #endif
 
     }

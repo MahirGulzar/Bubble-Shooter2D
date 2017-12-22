@@ -10,8 +10,8 @@ public class BoundryScaler : MonoBehaviour {
 
 	void Start()
     {
-        
-#if UNITY_EDITOR && UNITY_ANDROID
+
+#if UNITY_EDITOR || UNITY_ANDROID || UNITY_STANDALONE_WIN
         if ((Screen.currentResolution.ToString().StartsWith("800") || Screen.currentResolution.ToString().StartsWith("1200")))
         {
             this.transform.position = TabletPosition;

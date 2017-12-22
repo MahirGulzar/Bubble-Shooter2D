@@ -19,20 +19,20 @@ public class ExplosionForce2D : MonoBehaviour
 		// Update is called once per frame
 		void FixedUpdate ()
 		{
-# if (UNITY_ANDROID || UNITY_IPHONE)
+#if (UNITY_ANDROID || UNITY_IPHONE)
 
-		if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began) {
+        if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began) {
 			Vector3 fingerPos = Input.GetTouch(0).position;
 			fingerPos.z = 10;
 			Vector3 objPos = Camera.main.ScreenToWorldPoint(fingerPos);
 			AddExplosionForce(GetComponent<Rigidbody2D>(), Power * 100, objPos, Radius);
 		}
 
-# endif
+#endif
 
-# if (UNITY_EDITOR || UNITY_WEBPLAYER)
+#if (UNITY_EDITOR || UNITY_WEBPLAYER || UNITY_STANDALONE_WIN)
 
-			if (Input.GetButtonDown("Fire1")){
+        if (Input.GetButtonDown("Fire1")){
                 //Destroy(GameObject.Find("GameManager"));
                 //Application.LoadLevel(0);
                 

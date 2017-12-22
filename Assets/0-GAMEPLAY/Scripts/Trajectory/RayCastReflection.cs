@@ -11,7 +11,7 @@ public class RayCastReflection : MonoBehaviour
     //a ray
     private Ray2D ray;
     //a RaycastHit variable, to gather informartion about the ray's collision
-    private RaycastHit2D hit, hit2;
+    private RaycastHit2D hit, hit2, hit3;
 
     //reflection direction
     private Vector3 inDirection;
@@ -73,8 +73,9 @@ public class RayCastReflection : MonoBehaviour
 
             Debug.DrawRay(hit.point, hit.normal * 3, Color.red);
 
+            ray.direction = ray.direction * -1;
+            //hit2 = Physics2D.Raycast(hit.point + ray.direction * 2f, ray.direction, 50f, 1 << LayerMask.NameToLayer("UI"));
             hit2 = Physics2D.Raycast(hit.point + ray.direction * 2f, ray.direction, 50f, 1 << LayerMask.NameToLayer("UI"));
-
 
 
             //represent the ray using a line that can only be viewed at the scene tab
@@ -82,9 +83,19 @@ public class RayCastReflection : MonoBehaviour
 
             if (hit2)
             {
-                LR2.SetVertexCount(2);
-                LR2.SetPosition(0, hit.point);
-                LR2.SetPosition(1, hit.point + ray.direction * 20f);
+                print(hit2.collider.name);
+                //hit3 = Physics2D.Raycast(hit.point + ray.direction * 2f, -ray.direction, 50f, 1 << LayerMask.NameToLayer("UI"));
+
+
+
+                //LR2.SetVertexCount(2);
+                //LR2.SetPosition(0, hit.point);
+                //LR2.SetPosition(1, hit.point + ray.direction * 20f);
+                
+                    LR2.SetVertexCount(2);
+                    LR2.SetPosition(0, hit2.point);
+                    LR2.SetPosition(1, hit2.point + -(ray.direction) * 20f);
+                
 
             }
             else

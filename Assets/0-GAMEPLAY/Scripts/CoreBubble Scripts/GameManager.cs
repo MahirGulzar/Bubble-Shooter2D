@@ -182,7 +182,7 @@ public class GameManager:MonoBehaviour{
 
         if (Num_Of_Rows > 14)
         {
-			#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE_WIN
             _Grid.transform.position = new Vector3(_Grid.transform.position.x, _Grid.transform.position.y + (Num_Of_Rows - 14) * 0.463f, _Grid.transform.position.z);
             TopBorder.transform.position = new Vector3(TopBorder.transform.position.x, TopBorder.transform.position.y + (Num_Of_Rows - 14) * 0.463f, TopBorder.transform.position.z);
             TopBorderUI.transform.position = new Vector2(TopBorder.transform.position.x, TopBorder.transform.position.y + 2f);

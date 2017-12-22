@@ -16,7 +16,7 @@ public class Grid_Special : MonoBehaviour
     {
 
 
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE_WIN
 
         this.transform.position = new Vector2(Android_Pos.transform.position.x, Android_Pos.transform.position.y);
 
